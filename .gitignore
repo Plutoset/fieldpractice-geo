@@ -1,0 +1,8 @@
+新建文件夹/
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
