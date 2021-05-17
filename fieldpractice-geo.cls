@@ -97,13 +97,16 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     left      = 2.5  cm, 
     right     = 2.5  cm
   }
-% ### 设置封面内容###
+%\r% 将行间距调整为1.25倍行距
+\renewcommand*{\baselinestretch}{1.25}
 
-\newcommand*\@faculty@input{}
-\newcommand*\@name@input{}
-\newcommand*\@xuehao@input{}
-\newcommand*\@grade@input{}
-\newcommand*\@class@input{}
+% ### 设置封面内容###
+\newcommand*\@title@input{地理学野外实习报告模板}
+\newcommand*\@faculty@input{院系：\uline{\hfill\quad\hfill}}
+\newcommand*\@name@input{姓名：\uline{\hfill\quad\hfill}}
+\newcommand*\@xuehao@input{学号：\uline{\hfill\quad\hfill}}
+\newcommand*\@grade@input{年级：\uline{\hfill\quad\hfill}}
+\newcommand*\@class@input{班级：\uline{\hfill\quad\hfill}}
 \newcommand*\@date@input{报告完成时间：\uline{\hfill\qquad\@date\qquad\hfill}}
 \newcommand*\@logo@input{
     \includegraphics[width=0.4\textwidth]
@@ -120,7 +123,8 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     \renewcommand{\@grade@input}{年级：\uline{\hfill\quad#1级\quad\hfill}}}
 \newcommand\class[1]{
     \renewcommand{\@class@input}{班级：\uline{\hfill\quad#1\quad\hfill}}}
-
+\renewcommand\title[1]{
+  \renewcommand{\@title@input}{#1}}
 % \captionsetup{font={\zihao{5}}}
 \renewcommand{\maketitle}{\par
 	\begingroup
@@ -146,7 +150,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   \vskip 2em%
   \begin{center}%
   \let \footnote \thanks
-    {\zihao{2}\hei \@title \par}%
+    {\zihao{2}\hei \@title@input \par}%
     \vskip 2cm
     {\@logo@input \par}
     \vskip 6cm
@@ -208,27 +212,6 @@ linkcolor=black
 {\contentslabel{4.5em}}{}
                 {\titlerule*[0.5pc]{$\cdot$}\contentspage}%
 % 目录页
-\renewcommand\tableofcontents{%
-\thispagestyle{empty}
-\centering \zihao{2}\contentsname
-    \centerline{
-        \@mkboth{%
-           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
-    \vskip 5ex%
-    \@starttoc{toc}%
-    \newpage
-    }
-
-\renewcommand\refname{\flushleft{参考文献}}
-\newcommand\geobibstyle[1]{
-  \cleardoublepage
-  \phantomsection
-  \addcontentsline{toc}{section}{参考文献}
-  \zihao{5}
-  \bibliographystyle{unsrt}
-    
-    % \nocite{*}
-}
 \newcommand*\tocc{
     \centerline{
         \zihao{2} \centering \textbf{目 \quad 录}
@@ -238,9 +221,24 @@ linkcolor=black
     \@starttoc{toc}%
     \newpage
 }
-%\r% 将行间距调整为1.25倍行距
-% \pagestyle{mainFancy}
-\renewcommand*{\baselinestretch}{1.25}
+
+\renewcommand*\tableofcontents{
+    \centerline{
+        \zihao{2} \centering \textbf{目 \quad 录}
+        \@mkboth{%
+           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
+    \vskip 5ex%
+    \@starttoc{toc}%
+    \newpage
+}
+% 参考文献
+\newcommand\geobibstyle{
+	\phantomsection
+	\addcontentsline{toc}{section}{参考文献}
+	\zihao{5}
+	\bibliographystyle{unsrt}
+	\renewcommand{\refname}{\begin{flushleft}参考文献\end{flushleft}}
+}
 
 % 每行缩进两个汉字
 \setlength{\parindent}{2em}
