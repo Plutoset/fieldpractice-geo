@@ -1,6 +1,7 @@
 # 地理学野外实习报告LaTex模板
 该LaTex模板基于普通地质野外实习报告格式模板改编而成，***具体格式与Word格式有细微区别***
 请使用XeLaTex编译器进行编译，模板格式具体信息可以在example.tex和example.pdf中查看。
+[下载地址，持续更新](https://github.com/Plutoset/fieldpractice-geo)
 ## 模板使用注意事项
 - 请下载并且确保当前编译的.tex的文件夹路径下包括fieldpractice-geo.cls文件，以及figures文件夹，该文件夹包括院徽.png
 - 请选择fieldpractice-geo作为文档类型，即开头语句为`\documentclass{fieldpractice-geo}`
