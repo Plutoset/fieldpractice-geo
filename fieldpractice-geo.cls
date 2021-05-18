@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{fieldpractice-geo}[2021/5/12 Wingnes TomBaugh]
+\ProvidesClass{fieldpractice-geo}[2021/5/12 Wingnes TomBaugh <tangbo@stu.ecnu.edu.cn>]
 
 
 \DeclareOption{colorprint}{\@mcm@bwprintfalse}
