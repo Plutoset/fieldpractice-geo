@@ -19,7 +19,7 @@
 Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \fi
 
-
+\RequirePackage[backend=biber,style=gb7714-2015]{biblatex}
 \RequirePackage{
     % 支持中文的 ctex 宏包
     ctex,   
@@ -76,7 +76,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     % 超链接
     hyperref,
     ifthen,
-    cite,
+    % cite,
     caption,
     tocloft,
     fontspec,
@@ -222,15 +222,6 @@ linkcolor=black
     \newpage
 }
 
-\renewcommand*\tableofcontents{
-    \centerline{
-        \zihao{2} \centering \textbf{目 \quad 录}
-        \@mkboth{%
-           \MakeUppercase\contentsname}{\MakeUppercase\contentsname}}%
-    \vskip 5ex%
-    \@starttoc{toc}%
-    \newpage
-}
 % 参考文献
 \newcommand\geobibstyle{
 	\phantomsection
@@ -238,18 +229,39 @@ linkcolor=black
 	\zihao{5}
 	\bibliographystyle{unsrt}
 	\renewcommand{\refname}{\begin{flushleft}参考文献\end{flushleft}}
+  \printbibliography[heading=bibintoc,title=参考文献]
 }
 
 % 每行缩进两个汉字
 \setlength{\parindent}{2em}
 % 设置字体
+\let\songti\relax
+\let\heiti\relax
+\let\fangsong\relax
+\let\kaishu\relax
+
+% \newCJKfontfamily\sonti{思源宋体}[BoldFont=SourceHanSerifSC-Bold]
+\setCJKmainfont{SourceHanSerifSC}[
+  Extension      = .otf,
+  UprightFont    = SourceHanSerifSC-Regular,
+  BoldFont       = SourceHanSerifSC-Bold,
+  % ItalicFont     = 思源宋体 TextItalic,
+  % BoldItalicFont = 思源宋体 BoldItalic
+  ]
+% SourceHanSerifSC\setCJKfamilyfont{SourceHanSans}[
+%   UprightFont    = SourceHanSans-Regular
+% ]
+% \setCJKmainfont{思源宋体}[BoldFont=思源宋体 Bold]
+% \setCJKsansfont{思源宋体}[BoldFont=思源宋体 Bold]
+% \setCJKmonofont{思源宋体}[BoldFont=思源宋体 Bold]
+
 \setmainfont{Times New Roman}
 %\setmonofont{Courier New}
-\setCJKfamilyfont{kai}[AutoFakeBold]{Simkai.ttf}
-\newcommand*{\kai}{\CJKfamily{kai}}
-\setCJKfamilyfont{song}[AutoFakeBold]{SimSun}
-\newcommand*{\song}{\CJKfamily{song}}
-\setCJKfamilyfont{hei}[AutoFakeBold]{SimHei}
+% \setCJKfamilyfont{kai}[AutoFakeBold]{Simkai.ttf}
+% \newcommand*{\kai}{\CJKfamily{kai}}
+% \setCJKfamilyfont{song}[AutoFakeBold]{SimSun}
+% \newcommand*{\song}{\CJKfamily{song}}
+\setCJKfamilyfont{hei}[AutoFakeBold]{SourceHanSans-Regular}
 \newcommand*{\hei}{\CJKfamily{hei}}
 % 浮动环境设置
 % 默认情况下, \LaTeX{} 要求每页的文字至少占据 20%,否则该页就只单独放置一个浮动环境,
