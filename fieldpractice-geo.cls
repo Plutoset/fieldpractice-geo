@@ -20,6 +20,9 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \fi
 
 \RequirePackage[backend=biber,style=gb7714-2015]{biblatex}
+\RequirePackage{etoolbox}
+\BeforeBeginEnvironment{tabular}{\begin{center}\zihao{-5}}
+\AfterEndEnvironment{tabular}{\end{center}}
 \RequirePackage{
     % 支持中文的 ctex 宏包
     ctex,   
@@ -80,7 +83,10 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
     caption,
     tocloft,
     fontspec,
-    xunicode
+    xunicode,
+    enumitem,
+    xpatch,
+    subcaption
 }
 %避免浮动
 % \RequirePackage[section]{placeins} 
@@ -141,7 +147,6 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
   \global\let\date\relax
   \global\let\and\relax
 }
-
 % 定义封面页
 \def\@maketitle{
     \newpage
@@ -158,13 +163,18 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
        \lineskip .5em%
        \linespread{1}
       \begin{tabular}[b]{c}%
-        \qquad{{\@faculty@input} \qquad\par} \\
-        \qquad{{\@name@input} \qquad\par} \\
-        \qquad{{\@xuehao@input} \qquad\par} \\
-        \qquad{{\@grade@input} \qquad\par} \\
-        \qquad{{\@class@input} \qquad\par} \\
+        \zihao{4}\qquad{{\@faculty@input} \qquad\par} \\
         \\
-        {{\@date@input} \par}
+        \zihao{4}\qquad{{\@name@input} \qquad\par} \\
+        \\
+        \zihao{4}\qquad{{\@xuehao@input} \qquad\par} \\
+        \\
+        \zihao{4}\qquad{{\@grade@input} \qquad\par} \\
+        \\
+        \zihao{4}\qquad{{\@class@input} \qquad\par} \\
+        \\
+        \\
+        \zihao{4}{{\@date@input} \par}
       \end{tabular}\par}%
     \vskip 1em%
   \end{center}%
@@ -230,7 +240,7 @@ linkcolor=black
 	\renewcommand{\refname}{\begin{flushleft}参考文献\end{flushleft}}
   \printbibliography[heading=bibintoc,title=参考文献]
 }
-
+\setlist[enumerate]{leftmargin=*}
 % 每行缩进两个汉字
 \setlength{\parindent}{2em}
 % 设置字体
@@ -285,6 +295,7 @@ linkcolor=black
 % 图表标题
 \DeclareCaptionFont{song}{\songti}
 \DeclareCaptionFont{five}{\zihao{5}}
+\DeclareCaptionFont{smallfive}{\zihao{-5}}
 \captionsetup[figure]{%
 	format=hang,   % 标题从第二行开始都有缩进, 应该和 justification=raggedright 的效果一样.
 	labelsep=quad, % 分隔符是一个空格
