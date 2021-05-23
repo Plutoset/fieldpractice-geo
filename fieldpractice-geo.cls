@@ -201,15 +201,15 @@ linkcolor=black
 \renewcommand*\thesection{第\zhnum{section}节}
 \renewcommand\thesubsection{\arabic{section}.\arabic{subsection}}
 
-\titlecontents{section}[4.5em]{\zihao{4}\bfseries}
-{\contentslabel{4.5em}}{}
+\titlecontents{section}[4.5em]{\zihao{4}\bfseries \vspace{10pt}}
+{\contentslabel{4em}}{\hspace*{-4em}}
               {\titlerule*[0.5pc]{$\cdot$}\contentspage}%
 
 \titlecontents{subsection}[4.5em]{\zihao{5}}
-{\contentslabel{4.5em}}{}
+{\contentslabel{4em}}{\hspace*{-4em}}
                 {\titlerule*[0.5pc]{$\cdot$}\contentspage}%
 \titlecontents{subsubsection}[4.5em]{\zihao{5}}
-{\contentslabel{4.5em}}{}
+{\contentslabel{4em}}{\hspace*{-4em}}
                 {\titlerule*[0.5pc]{$\cdot$}\contentspage}%
 % 目录页
 \newcommand*\tocc{
@@ -221,7 +221,6 @@ linkcolor=black
     \@starttoc{toc}%
     \newpage
 }
-
 % 参考文献
 \newcommand\geobibstyle{
 	\phantomsection
