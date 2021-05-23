@@ -1,10 +1,13 @@
 新建文件夹/
+latex.out/
+example-figures/
 *.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
 *.log
 *.out
 *.toc
-*.bbl
-*.blg
 *.synctex.gz
-*.fls
-*.fdb_latexmk
+*.xdv
