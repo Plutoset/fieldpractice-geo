@@ -3,8 +3,11 @@
 请使用XeLaTex编译器进行编译，模板格式具体信息可以在example.tex和example.pdf中查看。
 [下载地址，持续更新](https://github.com/Plutoset/fieldpractice-geo)
 
+### 2021-6-25 update
+- README.md增加思源字体的下载链接🔗
+
 ### 2021-5-23 update
-- 字体库更新为思源宋体和思源黑体
+- 字体库更新为[思源宋体](https://github.com/adobe-fonts/source-han-serif)和[思源黑体](https://github.com/adobe-fonts/source-han-sans)
 - 参考文献改用biber编译，采用GB/T 7714-2015标准
 - 目录页参考实现文献左对齐
 - 实现枚举左对齐
