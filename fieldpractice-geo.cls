@@ -25,7 +25,7 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \AfterEndEnvironment{tabular}{\end{center}}
 \RequirePackage{
     % 支持中文的 ctex 宏包
-    ctex,   
+    % ctex,   
     zhnumber,
     % 页面布局
     geometry,

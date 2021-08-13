@@ -3,6 +3,9 @@
 请使用XeLaTex编译器进行编译，模板格式具体信息可以在example.tex和example.pdf中查看。
 [下载地址，持续更新](https://github.com/Plutoset/fieldpractice-geo)
 
+### 2021-8-13 update
+- 所需下载的字体为[SourceHanSerifSC-Regular.otf](https://github.com/adobe-fonts/source-han-serif/blob/release/OTF/SimplifiedChinese/SourceHanSerifSC-Regular.otf), [SourceHanSerifSC-Bold.otf](https://github.com/adobe-fonts/source-han-serif/blob/release/OTF/SimplifiedChinese/SourceHanSerifSC-Bold.otf), [SourceHanSans-Regular.otf](https://github.com/adobe-fonts/source-han-sans/blob/release/OTF/SimplifiedChinese/SourceHanSansSC-Regular.otf), 如需更替字体可修改cls的253-273行。
+- 解决了ctex和ctexart不兼容的问题
 ### 2021-6-25 update
 - README.md增加思源字体的下载链接🔗
 
